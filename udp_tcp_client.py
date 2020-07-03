@@ -46,6 +46,7 @@ if __name__ == "__main__":
     
     host,port,data=sys.argv[2:]
     port = int(port)
+    data = data.encode('utf_8')
     if sys.argv[1] == "-t":
         sock = socket.SOCK_STREAM
     elif sys.argv[1] == "-u":
