@@ -19,7 +19,7 @@ def run_server(ip="0.0.0.0", port=9998,response="SERVER TEST"):
     print("Listening on ", ip, ":", port, sep="")
     while True:
         client, addr = server.accept()
-        print("Connection from", addr[0], ":", addr[1], sep="")        
+        print("Connection from ", addr[0], ":", addr[1], sep="")        
         handler_thread = threading.Thread(target=handle_request,
                                           args=(client,response,))
         handler_thread.start()
