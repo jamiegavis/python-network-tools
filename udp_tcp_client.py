@@ -9,7 +9,7 @@ Created on Fri Jul  3 08:46:38 2020
 import socket
 import sys
 
-def main(sock_type=socket.SOCK_STREAM,host,port,data):
+def main(host,port,data,sock_type=socket.SOCK_STREAM):
     '''
     Sends packets (TCP/UDP) and returns response from server.
     
@@ -50,4 +50,4 @@ if __name__ == "__main__":
     elif sys.argv[1] == "-u":
         sock = socket.SOCK_DGRAM
     
-    main(sock,host,port,data)
+    main(host,port,data,sock_type=socket.SOCK_STREAM)
