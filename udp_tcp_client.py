@@ -45,6 +45,7 @@ if __name__ == "__main__":
         sys.exit(1)    
     
     host,port,data=sys.argv[2:]
+    port = int(port)
     if sys.argv[1] == "-t":
         sock = socket.SOCK_STREAM
     elif sys.argv[1] == "-u":
