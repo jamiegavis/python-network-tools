@@ -11,6 +11,13 @@ import threading
 
 def run_server(ip="0.0.0.0", port=9999,response="SERVER TEST"):
     '''
+    Creates a multi-thread TCP server.
+    
+    inputs
+        ip (string): the IP address (default 0.0.0.0)
+        port (int): the port (default 9999)
+        response (string): response handler will send to all connecting clients
+    
     '''
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((ip,port))
@@ -25,8 +32,6 @@ def run_server(ip="0.0.0.0", port=9999,response="SERVER TEST"):
         handler_thread.start()
     
 def handle_request(client, response):
-    '''
-    '''
     response = response.encode('utf-8')
     request = client.recv(1024)
     print("Received:", request)
