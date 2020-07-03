@@ -29,12 +29,12 @@ def main(sock_type=socket.SOCK_STREAM,host,port,data):
     client = socket.socket(socket.AF_INET,sock_type) #default paramaters for tcp
     
     if sock_type == socket.SOCK_STREAM:
-        client.connect([host,port])
+        client.connect((host,port))
         client.send(data)
         return client.recv(4096)
     
     elif sock_type == socket.SOCK_DGRAM:
-        client.sendto(data,[host,port])
+        client.sendto(data,(host,port))
         received,_ = client.recvfrom(4096)
         return received
     
