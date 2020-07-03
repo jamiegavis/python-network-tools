@@ -9,7 +9,7 @@ Created on Fri Jul  3 10:31:29 2020
 import socket
 import threading
 
-def run_server(ip="0.0.0.0", port=9998,response="SERVER TEST"):
+def run_server(ip="0.0.0.0", port=9999,response="SERVER TEST"):
     '''
     '''
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
