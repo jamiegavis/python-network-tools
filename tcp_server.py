@@ -8,8 +8,9 @@ Created on Fri Jul  3 10:31:29 2020
 
 import socket
 import threading
+import sys
 
-def run_server(ip="0.0.0.0", port=9999,response="SERVER TEST"):
+def run_server(ip="0.0.0.0", port=9999,response=lambda _:"SERVER TEST"):
     '''
     Creates a multi-thread TCP server.
     
@@ -30,14 +31,15 @@ def run_server(ip="0.0.0.0", port=9999,response="SERVER TEST"):
         handler_thread = threading.Thread(target=handle_request,
                                           args=(client,response,))
         handler_thread.start()
+
     
 def handle_request(client, response):
-    response = response.encode('utf-8')
+    response_str = response().encode('utf-8')
     request = client.recv(1024)
     print("Received:", request)
-    client.send(response)
+    client.send(response_str)
     client.close()
-
-if __name__ == "__main__":
     
-    run_server() #defaults
+if __name__ == "__main__":
+    # take args 
+    run_server(ip, port, response) #defaults
