@@ -3,7 +3,7 @@
 """
 Created on Fri Jul  3 08:46:38 2020
 
-@author: ejg
+@author: jg
 """
 
 import socket

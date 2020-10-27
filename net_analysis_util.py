@@ -3,7 +3,7 @@
 """
 Created on Fri Jul  3 20:47:09 2020
 
-@author: ejg
+@author: jg
 """
 
 import socket
@@ -46,5 +46,10 @@ def client_sender(target,port,content):
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     #Parse Console Commands
     main()
+=======
+    #PARSE 
+    main()
+>>>>>>> 48a78363893e33cd9053084db0d13d38a012e547
