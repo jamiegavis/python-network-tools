@@ -25,7 +25,7 @@ def main(listen = True, target ="0.0.0.0", port=9999):
         client_sender(target,port,buffer)
     
     
-def run_cmd():
+def run_console_cmd():
     return ""
 
 
@@ -38,7 +38,7 @@ def client_sender(target,port,content):
         response = udp_tcp_client.connect(target,port,content,socket.SOCK_STREAM)
         if not response: 
             print("No response from ",target)
-            break #return   
+            break #
         print(response)
         content = input("Reply: ").strip()
         if content: 
@@ -46,5 +46,5 @@ def client_sender(target,port,content):
 
 
 if __name__ == "__main__":
-    #PARSE 
+    #Parse Console Commands
     main()
